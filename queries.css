@@ -36,7 +36,7 @@
 
 @media (max-width: 51.5em) {
   .hero {
-    height: 110vh;
+    height: 100vh;
   }
   .company__content {
     grid-template-columns: 1fr;
