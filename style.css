@@ -42,6 +42,32 @@ body {
   overflow-x: hidden;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
+.hamburger {
+  display: none;
+  transition: all 0.4s ease-in-out;
+  z-index: 14;
+}
+
+.center {
+  transform: translateX(5px);
+}
+
+.toggle .line1 {
+  transform: translate(-5px, 7px) rotate(-45deg);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: translate(-5px, -7px) rotate(45deg);
+}
+
 a {
   text-decoration: none;
 }
@@ -187,6 +213,10 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+.nav {
+  transition: all 0.4s ease-out;
+}
+
 .nav > .btn {
   margin-left: 1.5rem;
   background-color: var(--green);
@@ -254,7 +284,7 @@ a {
 }
 
 .hero__heading--primary {
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: 8rem;
   color: var(--light-blue);
   padding: 1rem 0;
 }
@@ -262,7 +292,7 @@ a {
 .hero__heading--secondary {
   color: var(--slate);
   line-height: 0.9;
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: 8rem;
 }
 
 .hero__descripiton {
@@ -788,6 +818,7 @@ input:valid + label::after {
   height: 100%;
   overflow: hidden;
   border-radius: 40px;
+  object-fit: cover;
 }
 
 .company__content--img > img {
@@ -798,7 +829,7 @@ input:valid + label::after {
 /************DOWNLOAD**************/
 
 .download {
-  width: 80rem;
+  max-width: 80rem;
   padding: 6rem;
   display: flex;
   align-items: center;

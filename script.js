@@ -38,3 +38,29 @@ valueDispalys.forEach((valueDispalys) => {
     }
   }, duration);
 });
+
+/*Mobile nav*/
+
+const navSlide = () => {
+  const burger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".nav");
+  const html = document.querySelector("html");
+  const navItem = document.querySelectorAll(".nav__item");
+
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("toggle");
+    burger.classList.toggle("center");
+    nav.classList.toggle("nav__active");
+    html.classList.toggle("overflow");
+  });
+
+  navItem.forEach((e) => {
+    e.addEventListener("click", () => {
+      nav.classList.toggle("nav__active");
+      html.classList.toggle("overflow");
+      burger.classList.toggle("toggle");
+    });
+  });
+};
+
+navSlide();
