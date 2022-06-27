@@ -186,6 +186,10 @@
 }
 
 @media (max-width: 26.875em) {
+  .hero {
+    padding-top: 12rem;
+    height: 50vh;
+  }
   .logo {
     height: 5.5rem;
   }
@@ -196,7 +200,7 @@
     text-align: center;
   }
   .bestsellers {
-    margin-top: 10rem;
+    margin-top: 2rem;
     margin-bottom: 15rem;
   }
   .comment {
