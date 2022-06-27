@@ -57,7 +57,7 @@ body {
 }
 
 .toggle .line1 {
-  transform: translate(-5px, 7px) rotate(-45deg);
+  transform: translate(-5px, 6px) rotate(-45deg);
 }
 
 .toggle .line2 {
@@ -65,7 +65,7 @@ body {
 }
 
 .toggle .line3 {
-  transform: translate(-5px, -7px) rotate(45deg);
+  transform: translate(-5px, -6px) rotate(45deg);
 }
 
 a {
