@@ -35,6 +35,9 @@
 }
 
 @media (max-width: 51.5em) {
+  .hero {
+    height: 80vh;
+  }
   .company__content {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -86,7 +89,7 @@
     margin-bottom: 24rem;
   }
   .footer {
-    height: 12rem;
+    height: 20rem;
   }
   .footer::after {
     width: 50rem;
@@ -149,9 +152,9 @@
   }
   .contact__form {
     grid-template-columns: 1fr;
-    row-gap: 1.5rem;
+    row-gap: 2.5rem;
     margin-top: 2rem;
-}
+  }
   .contact {
     margin: 4rem;
     margin-bottom: 24rem;
@@ -182,31 +185,31 @@
   }
 }
 
-@media (max-width: 26.875em){
-    .logo{
-        height: 5.5rem;
-    }
-    html{
-        font-size: 40%;
-    }
-    .download__heading--primary{
-        text-align: center;
-    }
-    .bestsellers{
-        margin-top: 10rem;
-        margin-bottom: 15rem;
-    }
-    .comment{
-        margin-top: 10rem;
-        margin-bottom: 15rem;
-    }
-    .customers{
-        margin-bottom: 0;
-    }
-    .contact{
-        margin-bottom: 15rem;
-    }
-    .company{
-        margin-bottom: 15rem;
-    }
+@media (max-width: 26.875em) {
+  .logo {
+    height: 5.5rem;
+  }
+  html {
+    font-size: 40%;
+  }
+  .download__heading--primary {
+    text-align: center;
+  }
+  .bestsellers {
+    margin-top: 10rem;
+    margin-bottom: 15rem;
+  }
+  .comment {
+    margin-top: 10rem;
+    margin-bottom: 15rem;
+  }
+  .customers {
+    margin-bottom: 0;
+  }
+  .contact {
+    margin-bottom: 15rem;
+  }
+  .company {
+    margin-bottom: 15rem;
+  }
 }
