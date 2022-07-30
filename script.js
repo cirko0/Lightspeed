@@ -53,11 +53,10 @@ const navSlide = () => {
     nav.classList.toggle("nav__active");
     html.classList.toggle("overflow");
   });
-
   navItem.forEach((e) => {
     e.addEventListener("click", () => {
       nav.classList.toggle("nav__active");
-      html.classList.toggle("overflow");
+      html.classList.remove("overflow");
       burger.classList.toggle("toggle");
     });
   });
