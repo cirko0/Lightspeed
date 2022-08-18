@@ -6,38 +6,21 @@ const header = document.querySelector(".header");
 
 /*Fix it*/
 
-let prevScrollPos = window.pageYOffset;
+// let prevScrollPos = window.pageYOffset;
 
-window.onscroll = function () {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollPos > currentScrollPos) {
-    header.classList.remove("scroll");
-  } else {
-    header.classList.add("scroll");
-  }
-  prevScrollPos = currentScrollPos;
-};
+// window.onscroll = function () {
+//   let currentScrollPos = window.pageYOffset;
+//   if (prevScrollPos > currentScrollPos) {
+//     header.classList.remove("scroll");
+//   } else {
+//     header.classList.add("scroll");
+//   }
+//   prevScrollPos = currentScrollPos;
+// };
 
 /*Numbers*/
 
 /*Fix it*/
-
-let valueDispalys = document.querySelectorAll(".num");
-
-let interval = 5000;
-
-valueDispalys.forEach((valueDispalys) => {
-  let startValue = 0;
-  let endValue = parseInt(valueDispalys.getAttribute("data-val"));
-  let duration = Math.floor(interval / endValue);
-  let counter = setInterval(() => {
-    startValue += 10;
-    valueDispalys.textContent = startValue;
-    if (startValue === endValue) {
-      clearInterval(counter);
-    }
-  }, duration);
-});
 
 /*Mobile nav*/
 
@@ -63,3 +46,53 @@ const navSlide = () => {
 };
 
 navSlide();
+
+const hero = document.querySelector(`.hero`);
+
+const navLock = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) {
+    header.classList.add(`header__shadow`);
+  } else {
+    header.classList.remove(`header__shadow`);
+  }
+};
+
+const heroObserver = new IntersectionObserver(navLock, {
+  root: null,
+  threshold: 1,
+});
+
+heroObserver.observe(hero);
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const customers = document.querySelector(`.customers`);
+let valueDispalys = document.querySelectorAll(".num");
+let interval = 5000;
+
+const startsCounting = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+  if (entry.isIntersecting) {
+    valueDispalys.forEach((valueDispalys) => {
+      let startValue = 0;
+      let endValue = parseInt(valueDispalys.getAttribute("data-val"));
+      let duration = Math.floor(interval / endValue);
+      let counter = setInterval(() => {
+        startValue += 10;
+        valueDispalys.textContent = startValue;
+        if (startValue === endValue) {
+          clearInterval(counter);
+        }
+      }, duration);
+    });
+  }
+};
+
+const customersObserver = new IntersectionObserver(startsCounting, {
+  root: null,
+  threshold: 1,
+});
+
+customersObserver.observe(customers);
