@@ -60,7 +60,7 @@ const navLock = function (entries) {
 
 const heroObserver = new IntersectionObserver(navLock, {
   root: null,
-  threshold: 0.8,
+  threshold: 1,
 });
 
 heroObserver.observe(hero);
@@ -71,20 +71,21 @@ const customers = document.querySelector(`.customers`);
 let valueDispalys = document.querySelectorAll(".num");
 let interval = 5000;
 let br = 0;
+let startValue = 0;
+let endValue = parseInt(valueDispalys.getAttribute("data-val"));
+let duration = Math.floor(interval / endValue);
+
+
 const startsCounting = function (entries) {
   const [entry] = entries;
-
-  if (entry.isIntersecting && br < 1) {
+  console.log(entry);
+  if (entry.isIntersecting) {
     valueDispalys.forEach((valueDispalys) => {
-      let startValue = 0;
-      let endValue = parseInt(valueDispalys.getAttribute("data-val"));
-      let duration = Math.floor(interval / endValue);
       let counter = setInterval(() => {
         startValue += 10;
         valueDispalys.textContent = startValue;
         if (startValue === endValue) {
           clearInterval(counter);
-          br++;
         }
       }, duration);
     });
