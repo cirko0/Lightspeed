@@ -60,7 +60,7 @@ const navLock = function (entries) {
 
 const heroObserver = new IntersectionObserver(navLock, {
   root: null,
-  threshold: 1,
+  threshold: 0.8,
 });
 
 heroObserver.observe(hero);
@@ -92,7 +92,7 @@ const startsCounting = function (entries) {
 
 const customersObserver = new IntersectionObserver(startsCounting, {
   root: null,
-  threshold: 1,
+  threshold: 0.2,
 });
 
 customersObserver.observe(customers);
