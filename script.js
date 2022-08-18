@@ -70,11 +70,11 @@ heroObserver.observe(hero);
 const customers = document.querySelector(`.customers`);
 let valueDispalys = document.querySelectorAll(".num");
 let interval = 5000;
-
+let br = 0;
 const startsCounting = function (entries) {
   const [entry] = entries;
-  console.log(entry);
-  if (entry.isIntersecting) {
+
+  if (entry.isIntersecting && br < 1) {
     valueDispalys.forEach((valueDispalys) => {
       let startValue = 0;
       let endValue = parseInt(valueDispalys.getAttribute("data-val"));
@@ -84,6 +84,7 @@ const startsCounting = function (entries) {
         valueDispalys.textContent = startValue;
         if (startValue === endValue) {
           clearInterval(counter);
+          br++;
         }
       }, duration);
     });
