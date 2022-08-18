@@ -71,16 +71,17 @@ const customers = document.querySelector(`.customers`);
 let valueDispalys = document.querySelectorAll(".num");
 let interval = 5000;
 let br = 0;
-let startValue = 0;
-let endValue = parseInt(valueDispalys.getAttribute("data-val"));
-let duration = Math.floor(interval / endValue);
-
 
 const startsCounting = function (entries) {
+  console.log(br);
+
   const [entry] = entries;
   console.log(entry);
-  if (entry.isIntersecting) {
+  if (entry.isIntersecting && br === 0) {
     valueDispalys.forEach((valueDispalys) => {
+      let startValue = 0;
+      let endValue = parseInt(valueDispalys.getAttribute("data-val"));
+      let duration = Math.floor(interval / endValue);
       let counter = setInterval(() => {
         startValue += 10;
         valueDispalys.textContent = startValue;
@@ -88,6 +89,7 @@ const startsCounting = function (entries) {
           clearInterval(counter);
         }
       }, duration);
+      br = 1;
     });
   }
 };
