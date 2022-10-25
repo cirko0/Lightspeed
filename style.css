@@ -724,8 +724,7 @@ input:valid + label .content__name {
   color: var(--green);
 }
 
-input:focus + label::after,
-input:invalid + label::after {
+input:focus + label::after {
   transform: translateX(0%);
 }
 
