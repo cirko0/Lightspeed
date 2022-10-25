@@ -157,3 +157,16 @@ const bestsellersObserver = new IntersectionObserver(textFade, {
 });
 
 bestsellersObserver.observe(company);
+
+// REtarded mail
+
+const email = document.getElementById(`email`);
+const label = document.getElementById(`email-label`);
+
+email.addEventListener(`change`, function () {
+  if (this.value !== ``) {
+    label.classList.add(`empty__input`);
+  } else {
+    label.classList.remove(`empty__input`);
+  }
+});
