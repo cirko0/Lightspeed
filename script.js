@@ -102,7 +102,7 @@ text1.forEach((container) => {
   };
   const bestsellersObserverLeft = new IntersectionObserver(textFadeLeft, {
     root: null,
-    threshold: 0.7,
+    threshold: 0.4,
   });
 
   bestsellersObserverLeft.observe(container);
@@ -117,7 +117,7 @@ const textFadeRight = function (entries) {
 
 const bestsellersObserverRight = new IntersectionObserver(textFadeRight, {
   root: null,
-  threshold: 0.7,
+  threshold: 0.4,
 });
 
 bestsellersObserverRight.observe(text2);
