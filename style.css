@@ -725,7 +725,7 @@ input:valid + label .content__name {
 }
 
 input:focus + label::after,
-input:valid + label::after {
+input:invalid + label::after {
   transform: translateX(0%);
 }
 
