@@ -3,33 +3,25 @@
 /*Nav bar*/
 
 const header = document.querySelector(".header");
-
-/*Fix it*/
-
-// let prevScrollPos = window.pageYOffset;
-
-// window.onscroll = function () {
-//   let currentScrollPos = window.pageYOffset;
-//   if (prevScrollPos > currentScrollPos) {
-//     header.classList.remove("scroll");
-//   } else {
-//     header.classList.add("scroll");
-//   }
-//   prevScrollPos = currentScrollPos;
-// };
-
-/*Numbers*/
-
-/*Fix it*/
+const hero = document.querySelector(`.hero`);
+const burger = document.querySelector(".hamburger");
+const nav = document.querySelector(".nav");
+const html = document.querySelector("html");
+const navItem = document.querySelectorAll(".nav__item");
+const customers = document.querySelector(`.customers`);
+let valueDispalys = document.querySelectorAll(".num");
+let interval = 5000;
+let br = 0;
+const text1 = document.querySelectorAll(`.fade--left`);
+const text2 = document.getElementById(`text2`);
+const comments = document.querySelector(`.comment__grid`);
+const company = document.querySelector(`.company__content`);
 
 /*Mobile nav*/
 
-const navSlide = () => {
-  const burger = document.querySelector(".hamburger");
-  const nav = document.querySelector(".nav");
-  const html = document.querySelector("html");
-  const navItem = document.querySelectorAll(".nav__item");
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+const navSlide = () => {
   burger.addEventListener("click", () => {
     burger.classList.toggle("toggle");
     burger.classList.toggle("center");
@@ -47,7 +39,9 @@ const navSlide = () => {
 
 navSlide();
 
-const hero = document.querySelector(`.hero`);
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//Hero intersectionObserver
 
 const navLock = function (entries) {
   const [entry] = entries;
@@ -65,18 +59,12 @@ const heroObserver = new IntersectionObserver(navLock, {
 
 heroObserver.observe(hero);
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const customers = document.querySelector(`.customers`);
-let valueDispalys = document.querySelectorAll(".num");
-let interval = 5000;
-let br = 0;
+//Customers intersectionObserver
 
 const startsCounting = function (entries) {
-  console.log(br);
-
   const [entry] = entries;
-  console.log(entry);
   if (entry.isIntersecting && br === 0) {
     valueDispalys.forEach((valueDispalys) => {
       let startValue = 0;
@@ -100,3 +88,72 @@ const customersObserver = new IntersectionObserver(startsCounting, {
 });
 
 customersObserver.observe(customers);
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/* Section bestsellers observer */
+
+text1.forEach((container) => {
+  const textFadeLeft = function (entries) {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      container.classList.remove(`fade--left`);
+    }
+  };
+  const bestsellersObserverLeft = new IntersectionObserver(textFadeLeft, {
+    root: null,
+    threshold: 0.7,
+  });
+
+  bestsellersObserverLeft.observe(container);
+});
+
+const textFadeRight = function (entries) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    text2.classList.remove(`fade--right`);
+  }
+};
+
+const bestsellersObserverRight = new IntersectionObserver(textFadeRight, {
+  root: null,
+  threshold: 0.7,
+});
+
+bestsellersObserverRight.observe(text2);
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/* Section comments observer */
+
+const textFadeUp = function (entries) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    comments.classList.remove(`fade--up`);
+  }
+};
+
+const bestsellersObserverUp = new IntersectionObserver(textFadeUp, {
+  root: null,
+  threshold: 0.1,
+});
+
+bestsellersObserverUp.observe(comments);
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/* Section company observer */
+
+const textFade = function (entries) {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    company.classList.remove(`fade`);
+  }
+};
+
+const bestsellersObserver = new IntersectionObserver(textFade, {
+  root: null,
+  threshold: 0.3,
+});
+
+bestsellersObserver.observe(company);

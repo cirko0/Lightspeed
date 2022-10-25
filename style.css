@@ -150,7 +150,6 @@ a {
 
 .social > a:hover > i {
   transform: translateY(-3px);
-  color: var(--green);
 }
 
 .social__mail {
@@ -183,7 +182,6 @@ a {
 
 .mail:hover {
   transform: translateY(-10px) rotate(90deg);
-  color: var(--green);
 }
 /***************HEADER***************/
 
@@ -268,19 +266,6 @@ a {
   justify-content: center;
   align-items: flex-start;
   transition: all 0.5s ease-in-out;
-  animation: 1.5s intro backwards;
-}
-
-@keyframes intro {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 .hero__heading--primary {
@@ -387,6 +372,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  transition: 0.7s all ease-out;
 }
 
 .bestsellers__content--text > .number {
@@ -495,6 +481,7 @@ a {
   grid-template-rows: 1fr 1fr;
   column-gap: 2rem;
   row-gap: 2rem;
+  transition: all 0.5s ease-in;
 }
 
 .comment__user--first {
@@ -805,6 +792,7 @@ input:valid + label::after {
   display: grid;
   grid-template-columns: 55fr 45fr;
   column-gap: 2rem;
+  transition: 0.7s all ease-in;
 }
 
 .company__content--text {
@@ -901,4 +889,24 @@ input:valid + label::after {
   background-color: var(--green);
   left: -40rem;
   bottom: -50rem;
+}
+
+.fade--left {
+  transform: translateX(-30rem);
+  opacity: 0;
+}
+
+.fade--right {
+  transform: translateX(30rem);
+  opacity: 0;
+}
+
+.fade--up {
+  transform: translateY(30rem);
+  opacity: 0;
+}
+
+.fade {
+  opacity: 0;
+  transform: scale(0.5);
 }
