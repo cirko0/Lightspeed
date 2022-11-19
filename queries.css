@@ -223,6 +223,11 @@
     margin-top: -18rem;
     margin-bottom: 15rem;
   }
+
+  .bestsellers__heading--secondary {
+    font-size: 4rem;
+  }
+
   .comment {
     margin-top: 10rem;
     margin-bottom: 15rem;

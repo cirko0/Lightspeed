@@ -41,7 +41,7 @@ navSlide();
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-//Hero intersectionObserver
+//  Hero intersectionObserver
 
 const navLock = function (entries) {
   const [entry] = entries;
@@ -59,9 +59,9 @@ const heroObserver = new IntersectionObserver(navLock, {
 
 heroObserver.observe(hero);
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-//Customers intersectionObserver
+//  Customers intersectionObserver
 
 const startsCounting = function (entries) {
   const [entry] = entries;
@@ -89,9 +89,9 @@ const customersObserver = new IntersectionObserver(startsCounting, {
 
 customersObserver.observe(customers);
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-/* Section bestsellers observer */
+/*  Section bestsellers observer */
 
 text1.forEach((container) => {
   const textFadeLeft = function (entries) {

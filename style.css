@@ -351,11 +351,11 @@ a {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 18px;
+  top: 14px;
   height: 1px;
   width: 30rem;
   background-color: var(--lightest-navy);
-  left: 20.5rem;
+  left: 24rem;
 }
 
 .bestsellers__gird {
@@ -468,11 +468,11 @@ a {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 18px;
+  top: 12px;
   height: 1px;
   width: 30rem;
   background-color: var(--lightest-navy);
-  left: 20rem;
+  left: 21rem;
 }
 
 .comment__grid {
@@ -521,7 +521,7 @@ a {
 }
 
 .comment__user--first > h2 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   color: var(--light-blue);
   margin-bottom: 0.5rem;
 }
@@ -786,11 +786,11 @@ input:focus + label::after {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 18px;
+  top: 13px;
   height: 1px;
   width: 30rem;
   background-color: var(--lightest-navy);
-  left: 23.5rem;
+  left: 24.5rem;
 }
 
 .company__content {
@@ -873,7 +873,7 @@ input:focus + label::after {
 }
 
 .footer > p {
-  cursor: pointer;
+  cursor: default;
   color: var(--slate);
   font-size: 1.2rem;
   transition: 0.4s all ease-in-out;
