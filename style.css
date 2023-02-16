@@ -316,7 +316,7 @@ a {
 .bestsellers__wave {
   transform: rotate(180deg);
   position: absolute;
-  top: 0;
+  top: -2px;
 }
 
 /************HOW TO USE***************/
