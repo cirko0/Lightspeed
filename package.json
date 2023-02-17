@@ -6,7 +6,7 @@
   "scripts": {
     "start": "live-server"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
     "url": "git+https://github.com/cirko0/Lightspeed.git"
   },
